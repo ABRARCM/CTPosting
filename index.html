@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Abra CT — Bank Posting Login</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+        font-family: 'Poppins', sans-serif;
+        background: linear-gradient(135deg, #0d4f3c 0%, #0f766e 50%, #14b8a6 100%);
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .login-card {
+        background: white;
+        border-radius: 20px;
+        padding: 48px 40px;
+        box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        text-align: center;
+        width: 400px;
+        max-width: 90vw;
+    }
+    .login-card img { height: 60px; margin-bottom: 20px; }
+    .login-card h1 { font-size: 24px; font-weight: 800; color: #0d4f3c; margin-bottom: 6px; }
+    .login-card p { font-size: 14px; color: #888; margin-bottom: 28px; }
+    .login-card input {
+        font-family: 'Poppins', sans-serif;
+        width: 100%;
+        padding: 14px 18px;
+        font-size: 16px;
+        border: 2px solid #ddd;
+        border-radius: 12px;
+        margin-bottom: 16px;
+        transition: border-color 0.2s;
+    }
+    .login-card input:focus { outline: none; border-color: #0f766e; }
+    .login-card button {
+        font-family: 'Poppins', sans-serif;
+        width: 100%;
+        padding: 14px;
+        font-size: 16px;
+        font-weight: 700;
+        background: linear-gradient(135deg, #0f766e, #0d4f3c);
+        color: white;
+        border: none;
+        border-radius: 12px;
+        cursor: pointer;
+        transition: opacity 0.2s;
+    }
+    .login-card button:hover { opacity: 0.9; }
+    .error { color: #FF6B6B; font-size: 13px; margin-top: 10px; display: none; }
+</style>
+</head>
+<body>
+<div class="login-card">
+    <img src="https://abrahealthgroup.com/wp-content/uploads/2022/09/Asset-48@4x-copy.png" alt="Abra Health">
+    <h1>Abra CT — Bank Posting</h1>
+    <p>Enter the password to access the dashboard</p>
+    <input type="password" id="pwd" placeholder="Password" onkeydown="if(event.key==='Enter')login()">
+    <button onclick="login()">Sign In</button>
+    <div class="error" id="err">Incorrect password. Please try again.</div>
+</div>
+<script>
+function login() {
+    const pwd = document.getElementById('pwd').value;
+    if (pwd === 'CTPosting2026') {
+        sessionStorage.setItem('ct_auth', 'true');
+        window.location.href = 'dashboard.html';
+    } else {
+        document.getElementById('err').style.display = 'block';
+    }
+}
+if (sessionStorage.getItem('ct_auth') === 'true') {
+    window.location.href = 'dashboard.html';
+}
+</script>
+</body>
+</html>
