@@ -90,11 +90,11 @@ df['Payment Method'] = df['Payment Method'].astype(str).str.strip() if 'Payment 
 if 'Payment Method' in df.columns and 'Description' in df.columns:
     is_funding_transfer = (
         (df['Payment Method'] == 'Other Transactions') &
-        (df['Description'].str.contains('FUNDING TRANSFER', case=False, na=False))
+        (df['Description'].str.contains('FUNDING TRANSFER|TRANSFER FROM|TRANSFER TO', case=False, na=False))
     )
     num_transfers = is_funding_transfer.sum()
     if num_transfers > 0:
-        print(f"Excluded {num_transfers} internal funding transfers")
+        print(f"Excluded {num_transfers} internal transfers between accounts")
     df = df[~is_funding_transfer]
 
 incoming = df[df['Amount'] > 0].copy()
@@ -390,7 +390,7 @@ def detail_outgoing_rows(data):
         date_total = group['Amount'].sum()
         date_count = len(group)
         html += f"""<tr class="date-header">
-            <td colspan="7">
+            <td colspan="6">
                 <span class="date-label">{date_display}</span>
                 <span class="date-stats">{date_count} debits &bull; <strong class="negative">({fmt_money(abs(date_total))})</strong></span>
             </td>
@@ -404,14 +404,6 @@ def detail_outgoing_rows(data):
             <td class="amount negative">({fmt_money(abs(row['Amount']))})</td>
             <td class="ach-col">{row['ACH Individual ID']}</td>
             <td class="desc-col">{row['ACH Entry Description'] if pd.notna(row.get('ACH Entry Description')) else ''}</td>
-            <td class="posted-col">
-                <select class="posted-select" data-row="{sid}" onchange="updateStatus(this)">
-                    <option value="">--</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                    <option value="partial">Partial</option>
-                </select>
-            </td>
             <td class="remarks-col">
                 <input type="text" class="remarks-input" data-row="rmk-{sid}" placeholder="Add remarks..." onchange="saveRemark(this)">
             </td>
@@ -1631,8 +1623,7 @@ html = f"""<!DOCTYPE html>
                 <th style="width:110px">Amount</th>
                 <th>ACH Individual ID</th>
                 <th>Description</th>
-                <th style="width:100px">OD Posted</th>
-                <th style="width:180px">Remarks</th>
+                <th style="width:200px">Remarks</th>
             </tr></thead>
             <tbody>{out_rows}</tbody>
         </table>
@@ -1697,7 +1688,7 @@ function saveRemark(input) {{
 }}
 
 function updateProgress() {{
-    const ppoTabs = ['tab-eft', 'tab-lockbox', 'tab-depchk', 'tab-bankdep', 'tab-carddeposits', 'tab-outgoing', 'tab-cashdep'];
+    const ppoTabs = ['tab-eft', 'tab-lockbox', 'tab-depchk', 'tab-cashdep'];
     const medTabs = ['tab-eftmed'];
 
     function countProgress(tabIds) {{

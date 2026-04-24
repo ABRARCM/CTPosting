@@ -440,8 +440,8 @@
     <button class="tab-btn" onclick="showTab('eftmed')">Medicaid EFT <span class="tab-count">5</span></button>
     <button class="tab-btn" onclick="showTab('lockbox')">Lockbox <span class="tab-count">125</span></button>
     <button class="tab-btn" onclick="showTab('depchk')">Deposited Checks <span class="tab-count">157</span></button>
-    <button class="tab-btn" onclick="showTab('cashdep')">Cash Deposits <span class="tab-count">9</span></button>
-    <button class="tab-btn" onclick="showTab('outgoing')">Outgoing <span class="tab-count">33</span></button>
+    <button class="tab-btn" onclick="showTab('cashdep')">Cash Deposits <span class="tab-count">8</span></button>
+    <button class="tab-btn" onclick="showTab('outgoing')">Outgoing <span class="tab-count">32</span></button>
     <button class="tab-btn" onclick="showTab('carddeposits')">Card Deposits <span class="tab-count">141</span></button>
 </div>
 
@@ -5493,7 +5493,7 @@
                 <div class="detail-title">CASH DEPOSITS — Curr/Coin Deposits</div>
                 <div class="detail-sub">Cash deposits at the bank — match to daily cash reports</div>
             </div>
-            <div class="detail-total">$14,774.99</div>
+            <div class="detail-total">$14,677.49</div>
             <div class="detail-posted" id="posted-tab-cashdep">Posted: $0.00</div>
             <button class="download-btn" onclick="downloadTab('tab-cashdep','Cash_Deposits')">CSV</button>
         </div>
@@ -5643,27 +5643,6 @@
             </td>
             <td class="remarks-col">
                 <input type="text" class="remarks-input" data-row="rmk-cash-73de1a2ccb" placeholder="Add remarks..." onchange="saveRemark(this)">
-            </td>
-        </tr><tr class="date-header">
-            <td colspan="7">
-                <span class="date-label">04/09/2026</span>
-                <span class="date-stats">1 deposits &bull; <strong>$97.50</strong></span>
-            </td>
-        </tr><tr data-row="cash-d967566473">
-            <td class="date-col">04/09/2026</td>
-            <td><span class="payer-badge cash-badge">Cash Deposit</span></td>
-            <td class="amount">$97.50</td>
-            <td class="desc-col">TRANSFER FROM 0100000000006882381622</td>
-            <td class="posted-col">
-                <select class="posted-select" data-row="cash-d967566473" onchange="updateStatus(this)">
-                    <option value="">--</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                    <option value="partial">Partial</option>
-                </select>
-            </td>
-            <td class="remarks-col">
-                <input type="text" class="remarks-input" data-row="rmk-cash-d967566473" placeholder="Add remarks..." onchange="saveRemark(this)">
             </td>
         </tr></tbody>
         </table>
@@ -9496,7 +9475,7 @@
                 <div class="detail-title">OUTGOING — Debits & Payments</div>
                 <div class="detail-sub">All outgoing transactions — payroll, utilities, fees, etc.</div>
             </div>
-            <div class="detail-total">($505,444.67)</div>
+            <div class="detail-total">($505,347.17)</div>
             <button class="download-btn" onclick="downloadTab('tab-outgoing','Outgoing')">CSV</button>
         </div>
         <table>
@@ -9506,11 +9485,10 @@
                 <th style="width:110px">Amount</th>
                 <th>ACH Individual ID</th>
                 <th>Description</th>
-                <th style="width:100px">OD Posted</th>
-                <th style="width:180px">Remarks</th>
+                <th style="width:200px">Remarks</th>
             </tr></thead>
             <tbody><tr class="date-header">
-            <td colspan="7">
+            <td colspan="6">
                 <span class="date-label">04/20/2026</span>
                 <span class="date-stats">1 debits &bull; <strong class="negative">($187.50)</strong></span>
             </td>
@@ -9520,19 +9498,11 @@
             <td class="amount negative">($187.50)</td>
             <td class="ach-col">8788240117296</td>
             <td class="desc-col">GLOBAL DEP</td>
-            <td class="posted-col">
-                <select class="posted-select" data-row="out-9e6102af98" onchange="updateStatus(this)">
-                    <option value="">--</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                    <option value="partial">Partial</option>
-                </select>
-            </td>
             <td class="remarks-col">
                 <input type="text" class="remarks-input" data-row="rmk-out-9e6102af98" placeholder="Add remarks..." onchange="saveRemark(this)">
             </td>
         </tr><tr class="date-header">
-            <td colspan="7">
+            <td colspan="6">
                 <span class="date-label">04/16/2026</span>
                 <span class="date-stats">1 debits &bull; <strong class="negative">($21,779.00)</strong></span>
             </td>
@@ -9542,19 +9512,11 @@
             <td class="amount negative">($21,779.00)</td>
             <td class="ach-col">94WX0 041516V01</td>
             <td class="desc-col">ADP 401k</td>
-            <td class="posted-col">
-                <select class="posted-select" data-row="out-6ba76fbf6d" onchange="updateStatus(this)">
-                    <option value="">--</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                    <option value="partial">Partial</option>
-                </select>
-            </td>
             <td class="remarks-col">
                 <input type="text" class="remarks-input" data-row="rmk-out-6ba76fbf6d" placeholder="Add remarks..." onchange="saveRemark(this)">
             </td>
         </tr><tr class="date-header">
-            <td colspan="7">
+            <td colspan="6">
                 <span class="date-label">04/15/2026</span>
                 <span class="date-stats">3 debits &bull; <strong class="negative">($429,250.38)</strong></span>
             </td>
@@ -9564,14 +9526,6 @@
             <td class="amount negative">($265,440.04)</td>
             <td class="ach-col">504102040769WX0</td>
             <td class="desc-col">WAGE PAY</td>
-            <td class="posted-col">
-                <select class="posted-select" data-row="out-221093ef5c" onchange="updateStatus(this)">
-                    <option value="">--</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                    <option value="partial">Partial</option>
-                </select>
-            </td>
             <td class="remarks-col">
                 <input type="text" class="remarks-input" data-row="rmk-out-221093ef5c" placeholder="Add remarks..." onchange="saveRemark(this)">
             </td>
@@ -9581,14 +9535,6 @@
             <td class="amount negative">($161,177.19)</td>
             <td class="ach-col">94WX0 041516A01</td>
             <td class="desc-col">ADP Tax</td>
-            <td class="posted-col">
-                <select class="posted-select" data-row="out-70144a9285" onchange="updateStatus(this)">
-                    <option value="">--</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                    <option value="partial">Partial</option>
-                </select>
-            </td>
             <td class="remarks-col">
                 <input type="text" class="remarks-input" data-row="rmk-out-70144a9285" placeholder="Add remarks..." onchange="saveRemark(this)">
             </td>
@@ -9598,19 +9544,11 @@
             <td class="amount negative">($2,633.15)</td>
             <td class="ach-col">504102040770WX0</td>
             <td class="desc-col">PAY-BY-PAY</td>
-            <td class="posted-col">
-                <select class="posted-select" data-row="out-5c5cb17c25" onchange="updateStatus(this)">
-                    <option value="">--</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                    <option value="partial">Partial</option>
-                </select>
-            </td>
             <td class="remarks-col">
                 <input type="text" class="remarks-input" data-row="rmk-out-5c5cb17c25" placeholder="Add remarks..." onchange="saveRemark(this)">
             </td>
         </tr><tr class="date-header">
-            <td colspan="7">
+            <td colspan="6">
                 <span class="date-label">04/14/2026</span>
                 <span class="date-stats">1 debits &bull; <strong class="negative">($2,579.28)</strong></span>
             </td>
@@ -9620,19 +9558,11 @@
             <td class="amount negative">($2,579.28)</td>
             <td class="ach-col">28296727031926</td>
             <td class="desc-col">WEB_PAY</td>
-            <td class="posted-col">
-                <select class="posted-select" data-row="out-6b2996f6d3" onchange="updateStatus(this)">
-                    <option value="">--</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                    <option value="partial">Partial</option>
-                </select>
-            </td>
             <td class="remarks-col">
                 <input type="text" class="remarks-input" data-row="rmk-out-6b2996f6d3" placeholder="Add remarks..." onchange="saveRemark(this)">
             </td>
         </tr><tr class="date-header">
-            <td colspan="7">
+            <td colspan="6">
                 <span class="date-label">04/10/2026</span>
                 <span class="date-stats">1 debits &bull; <strong class="negative">($275.30)</strong></span>
             </td>
@@ -9642,21 +9572,13 @@
             <td class="amount negative">($275.30)</td>
             <td class="ach-col">926542218554</td>
             <td class="desc-col">ADP FEES</td>
-            <td class="posted-col">
-                <select class="posted-select" data-row="out-68bff9e941" onchange="updateStatus(this)">
-                    <option value="">--</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                    <option value="partial">Partial</option>
-                </select>
-            </td>
             <td class="remarks-col">
                 <input type="text" class="remarks-input" data-row="rmk-out-68bff9e941" placeholder="Add remarks..." onchange="saveRemark(this)">
             </td>
         </tr><tr class="date-header">
-            <td colspan="7">
+            <td colspan="6">
                 <span class="date-label">04/09/2026</span>
-                <span class="date-stats">2 debits &bull; <strong class="negative">($222.00)</strong></span>
+                <span class="date-stats">1 debits &bull; <strong class="negative">($124.50)</strong></span>
             </td>
         </tr><tr data-row="out-63ccf541b5">
             <td class="date-col">04/09/2026</td>
@@ -9664,36 +9586,11 @@
             <td class="amount negative">($124.50)</td>
             <td class="ach-col">8788240117275</td>
             <td class="desc-col">GLOBAL DEP</td>
-            <td class="posted-col">
-                <select class="posted-select" data-row="out-63ccf541b5" onchange="updateStatus(this)">
-                    <option value="">--</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                    <option value="partial">Partial</option>
-                </select>
-            </td>
             <td class="remarks-col">
                 <input type="text" class="remarks-input" data-row="rmk-out-63ccf541b5" placeholder="Add remarks..." onchange="saveRemark(this)">
             </td>
-        </tr><tr data-row="out-0fa64b83ec">
-            <td class="date-col">04/09/2026</td>
-            <td><span class="payer-badge outgoing-badge">---</span></td>
-            <td class="amount negative">($97.50)</td>
-            <td class="ach-col">nan</td>
-            <td class="desc-col">nan</td>
-            <td class="posted-col">
-                <select class="posted-select" data-row="out-0fa64b83ec" onchange="updateStatus(this)">
-                    <option value="">--</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                    <option value="partial">Partial</option>
-                </select>
-            </td>
-            <td class="remarks-col">
-                <input type="text" class="remarks-input" data-row="rmk-out-0fa64b83ec" placeholder="Add remarks..." onchange="saveRemark(this)">
-            </td>
         </tr><tr class="date-header">
-            <td colspan="7">
+            <td colspan="6">
                 <span class="date-label">04/07/2026</span>
                 <span class="date-stats">1 debits &bull; <strong class="negative">($631.87)</strong></span>
             </td>
@@ -9703,19 +9600,11 @@
             <td class="amount negative">($631.87)</td>
             <td class="ach-col">27534201031326</td>
             <td class="desc-col">WEB_PAY</td>
-            <td class="posted-col">
-                <select class="posted-select" data-row="out-c0b417df26" onchange="updateStatus(this)">
-                    <option value="">--</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                    <option value="partial">Partial</option>
-                </select>
-            </td>
             <td class="remarks-col">
                 <input type="text" class="remarks-input" data-row="rmk-out-c0b417df26" placeholder="Add remarks..." onchange="saveRemark(this)">
             </td>
         </tr><tr class="date-header">
-            <td colspan="7">
+            <td colspan="6">
                 <span class="date-label">04/06/2026</span>
                 <span class="date-stats">3 debits &bull; <strong class="negative">($8,251.91)</strong></span>
             </td>
@@ -9725,14 +9614,6 @@
             <td class="amount negative">($6,139.91)</td>
             <td class="ach-col">QD97NL</td>
             <td class="desc-col">WEB PMTS</td>
-            <td class="posted-col">
-                <select class="posted-select" data-row="out-ab85ce0786" onchange="updateStatus(this)">
-                    <option value="">--</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                    <option value="partial">Partial</option>
-                </select>
-            </td>
             <td class="remarks-col">
                 <input type="text" class="remarks-input" data-row="rmk-out-ab85ce0786" placeholder="Add remarks..." onchange="saveRemark(this)">
             </td>
@@ -9742,14 +9623,6 @@
             <td class="amount negative">($1,927.00)</td>
             <td class="ach-col">94WX0 7337495VV</td>
             <td class="desc-col">ADP Tax</td>
-            <td class="posted-col">
-                <select class="posted-select" data-row="out-edd4a3add2" onchange="updateStatus(this)">
-                    <option value="">--</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                    <option value="partial">Partial</option>
-                </select>
-            </td>
             <td class="remarks-col">
                 <input type="text" class="remarks-input" data-row="rmk-out-edd4a3add2" placeholder="Add remarks..." onchange="saveRemark(this)">
             </td>
@@ -9759,19 +9632,11 @@
             <td class="amount negative">($185.00)</td>
             <td class="ach-col">61940302</td>
             <td class="desc-col">CABLE PMNT</td>
-            <td class="posted-col">
-                <select class="posted-select" data-row="out-3dfae81129" onchange="updateStatus(this)">
-                    <option value="">--</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                    <option value="partial">Partial</option>
-                </select>
-            </td>
             <td class="remarks-col">
                 <input type="text" class="remarks-input" data-row="rmk-out-3dfae81129" placeholder="Add remarks..." onchange="saveRemark(this)">
             </td>
         </tr><tr class="date-header">
-            <td colspan="7">
+            <td colspan="6">
                 <span class="date-label">04/03/2026</span>
                 <span class="date-stats">10 debits &bull; <strong class="negative">($25,793.22)</strong></span>
             </td>
@@ -9781,14 +9646,6 @@
             <td class="amount negative">($7,725.08)</td>
             <td class="ach-col">94WX0 7308932VV</td>
             <td class="desc-col">ADP Tax</td>
-            <td class="posted-col">
-                <select class="posted-select" data-row="out-8948b8e801" onchange="updateStatus(this)">
-                    <option value="">--</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                    <option value="partial">Partial</option>
-                </select>
-            </td>
             <td class="remarks-col">
                 <input type="text" class="remarks-input" data-row="rmk-out-8948b8e801" placeholder="Add remarks..." onchange="saveRemark(this)">
             </td>
@@ -9798,14 +9655,6 @@
             <td class="amount negative">($7,287.58)</td>
             <td class="ach-col">94WX0 7308933VV</td>
             <td class="desc-col">ADP Tax</td>
-            <td class="posted-col">
-                <select class="posted-select" data-row="out-e616df0d50" onchange="updateStatus(this)">
-                    <option value="">--</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                    <option value="partial">Partial</option>
-                </select>
-            </td>
             <td class="remarks-col">
                 <input type="text" class="remarks-input" data-row="rmk-out-e616df0d50" placeholder="Add remarks..." onchange="saveRemark(this)">
             </td>
@@ -9815,14 +9664,6 @@
             <td class="amount negative">($5,947.61)</td>
             <td class="ach-col">94WX0 7308934VV</td>
             <td class="desc-col">ADP Tax</td>
-            <td class="posted-col">
-                <select class="posted-select" data-row="out-9d9b2ca780" onchange="updateStatus(this)">
-                    <option value="">--</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                    <option value="partial">Partial</option>
-                </select>
-            </td>
             <td class="remarks-col">
                 <input type="text" class="remarks-input" data-row="rmk-out-9d9b2ca780" placeholder="Add remarks..." onchange="saveRemark(this)">
             </td>
@@ -9832,14 +9673,6 @@
             <td class="amount negative">($1,342.88)</td>
             <td class="ach-col">498492422882</td>
             <td class="desc-col">DEPOSIT</td>
-            <td class="posted-col">
-                <select class="posted-select" data-row="out-ca21f77b3e" onchange="updateStatus(this)">
-                    <option value="">--</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                    <option value="partial">Partial</option>
-                </select>
-            </td>
             <td class="remarks-col">
                 <input type="text" class="remarks-input" data-row="rmk-out-ca21f77b3e" placeholder="Add remarks..." onchange="saveRemark(this)">
             </td>
@@ -9849,14 +9682,6 @@
             <td class="amount negative">($813.32)</td>
             <td class="ach-col">498492417882</td>
             <td class="desc-col">DEPOSIT</td>
-            <td class="posted-col">
-                <select class="posted-select" data-row="out-f02b423835" onchange="updateStatus(this)">
-                    <option value="">--</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                    <option value="partial">Partial</option>
-                </select>
-            </td>
             <td class="remarks-col">
                 <input type="text" class="remarks-input" data-row="rmk-out-f02b423835" placeholder="Add remarks..." onchange="saveRemark(this)">
             </td>
@@ -9866,14 +9691,6 @@
             <td class="amount negative">($805.45)</td>
             <td class="ach-col">498492420886</td>
             <td class="desc-col">DEPOSIT</td>
-            <td class="posted-col">
-                <select class="posted-select" data-row="out-a58e09c0e5" onchange="updateStatus(this)">
-                    <option value="">--</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                    <option value="partial">Partial</option>
-                </select>
-            </td>
             <td class="remarks-col">
                 <input type="text" class="remarks-input" data-row="rmk-out-a58e09c0e5" placeholder="Add remarks..." onchange="saveRemark(this)">
             </td>
@@ -9883,14 +9700,6 @@
             <td class="amount negative">($779.73)</td>
             <td class="ach-col">498504319886</td>
             <td class="desc-col">DEPOSIT</td>
-            <td class="posted-col">
-                <select class="posted-select" data-row="out-ec889d327d" onchange="updateStatus(this)">
-                    <option value="">--</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                    <option value="partial">Partial</option>
-                </select>
-            </td>
             <td class="remarks-col">
                 <input type="text" class="remarks-input" data-row="rmk-out-ec889d327d" placeholder="Add remarks..." onchange="saveRemark(this)">
             </td>
@@ -9900,14 +9709,6 @@
             <td class="amount negative">($778.11)</td>
             <td class="ach-col">498492423880</td>
             <td class="desc-col">DEPOSIT</td>
-            <td class="posted-col">
-                <select class="posted-select" data-row="out-773c9ed3bc" onchange="updateStatus(this)">
-                    <option value="">--</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                    <option value="partial">Partial</option>
-                </select>
-            </td>
             <td class="remarks-col">
                 <input type="text" class="remarks-input" data-row="rmk-out-773c9ed3bc" placeholder="Add remarks..." onchange="saveRemark(this)">
             </td>
@@ -9917,14 +9718,6 @@
             <td class="amount negative">($289.00)</td>
             <td class="ach-col"></td>
             <td class="desc-col">SALE</td>
-            <td class="posted-col">
-                <select class="posted-select" data-row="out-edabbb01d2" onchange="updateStatus(this)">
-                    <option value="">--</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                    <option value="partial">Partial</option>
-                </select>
-            </td>
             <td class="remarks-col">
                 <input type="text" class="remarks-input" data-row="rmk-out-edabbb01d2" placeholder="Add remarks..." onchange="saveRemark(this)">
             </td>
@@ -9934,19 +9727,11 @@
             <td class="amount negative">($24.46)</td>
             <td class="ach-col">498526999889</td>
             <td class="desc-col">DEPOSIT</td>
-            <td class="posted-col">
-                <select class="posted-select" data-row="out-ecefe0da25" onchange="updateStatus(this)">
-                    <option value="">--</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                    <option value="partial">Partial</option>
-                </select>
-            </td>
             <td class="remarks-col">
                 <input type="text" class="remarks-input" data-row="rmk-out-ecefe0da25" placeholder="Add remarks..." onchange="saveRemark(this)">
             </td>
         </tr><tr class="date-header">
-            <td colspan="7">
+            <td colspan="6">
                 <span class="date-label">04/02/2026</span>
                 <span class="date-stats">9 debits &bull; <strong class="negative">($8,123.74)</strong></span>
             </td>
@@ -9956,14 +9741,6 @@
             <td class="amount negative">($5,000.00)</td>
             <td class="ach-col">nan</td>
             <td class="desc-col">nan</td>
-            <td class="posted-col">
-                <select class="posted-select" data-row="out-5bb956d58b" onchange="updateStatus(this)">
-                    <option value="">--</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                    <option value="partial">Partial</option>
-                </select>
-            </td>
             <td class="remarks-col">
                 <input type="text" class="remarks-input" data-row="rmk-out-5bb956d58b" placeholder="Add remarks..." onchange="saveRemark(this)">
             </td>
@@ -9973,14 +9750,6 @@
             <td class="amount negative">($1,102.20)</td>
             <td class="ach-col">8788240117275</td>
             <td class="desc-col">GLOBAL STL</td>
-            <td class="posted-col">
-                <select class="posted-select" data-row="out-42eb392dc8" onchange="updateStatus(this)">
-                    <option value="">--</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                    <option value="partial">Partial</option>
-                </select>
-            </td>
             <td class="remarks-col">
                 <input type="text" class="remarks-input" data-row="rmk-out-42eb392dc8" placeholder="Add remarks..." onchange="saveRemark(this)">
             </td>
@@ -9990,14 +9759,6 @@
             <td class="amount negative">($665.59)</td>
             <td class="ach-col">8788240117293</td>
             <td class="desc-col">GLOBAL STL</td>
-            <td class="posted-col">
-                <select class="posted-select" data-row="out-e4462578cc" onchange="updateStatus(this)">
-                    <option value="">--</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                    <option value="partial">Partial</option>
-                </select>
-            </td>
             <td class="remarks-col">
                 <input type="text" class="remarks-input" data-row="rmk-out-e4462578cc" placeholder="Add remarks..." onchange="saveRemark(this)">
             </td>
@@ -10007,14 +9768,6 @@
             <td class="amount negative">($452.01)</td>
             <td class="ach-col">8788240117296</td>
             <td class="desc-col">GLOBAL STL</td>
-            <td class="posted-col">
-                <select class="posted-select" data-row="out-87d3b0fd8a" onchange="updateStatus(this)">
-                    <option value="">--</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                    <option value="partial">Partial</option>
-                </select>
-            </td>
             <td class="remarks-col">
                 <input type="text" class="remarks-input" data-row="rmk-out-87d3b0fd8a" placeholder="Add remarks..." onchange="saveRemark(this)">
             </td>
@@ -10024,14 +9777,6 @@
             <td class="amount negative">($229.06)</td>
             <td class="ach-col">8788240117299</td>
             <td class="desc-col">GLOBAL STL</td>
-            <td class="posted-col">
-                <select class="posted-select" data-row="out-c9c9a8e7ea" onchange="updateStatus(this)">
-                    <option value="">--</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                    <option value="partial">Partial</option>
-                </select>
-            </td>
             <td class="remarks-col">
                 <input type="text" class="remarks-input" data-row="rmk-out-c9c9a8e7ea" placeholder="Add remarks..." onchange="saveRemark(this)">
             </td>
@@ -10041,14 +9786,6 @@
             <td class="amount negative">($201.37)</td>
             <td class="ach-col">8788240117233</td>
             <td class="desc-col">GLOBAL STL</td>
-            <td class="posted-col">
-                <select class="posted-select" data-row="out-f124b9181b" onchange="updateStatus(this)">
-                    <option value="">--</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                    <option value="partial">Partial</option>
-                </select>
-            </td>
             <td class="remarks-col">
                 <input type="text" class="remarks-input" data-row="rmk-out-f124b9181b" placeholder="Add remarks..." onchange="saveRemark(this)">
             </td>
@@ -10058,14 +9795,6 @@
             <td class="amount negative">($159.56)</td>
             <td class="ach-col">8788240117232</td>
             <td class="desc-col">GLOBAL STL</td>
-            <td class="posted-col">
-                <select class="posted-select" data-row="out-ef6ee44746" onchange="updateStatus(this)">
-                    <option value="">--</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                    <option value="partial">Partial</option>
-                </select>
-            </td>
             <td class="remarks-col">
                 <input type="text" class="remarks-input" data-row="rmk-out-ef6ee44746" placeholder="Add remarks..." onchange="saveRemark(this)">
             </td>
@@ -10075,14 +9804,6 @@
             <td class="amount negative">($157.70)</td>
             <td class="ach-col">8788240117231</td>
             <td class="desc-col">GLOBAL STL</td>
-            <td class="posted-col">
-                <select class="posted-select" data-row="out-af7390b3fc" onchange="updateStatus(this)">
-                    <option value="">--</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                    <option value="partial">Partial</option>
-                </select>
-            </td>
             <td class="remarks-col">
                 <input type="text" class="remarks-input" data-row="rmk-out-af7390b3fc" placeholder="Add remarks..." onchange="saveRemark(this)">
             </td>
@@ -10092,19 +9813,11 @@
             <td class="amount negative">($156.25)</td>
             <td class="ach-col">8788240117234</td>
             <td class="desc-col">GLOBAL STL</td>
-            <td class="posted-col">
-                <select class="posted-select" data-row="out-279dc3561f" onchange="updateStatus(this)">
-                    <option value="">--</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                    <option value="partial">Partial</option>
-                </select>
-            </td>
             <td class="remarks-col">
                 <input type="text" class="remarks-input" data-row="rmk-out-279dc3561f" placeholder="Add remarks..." onchange="saveRemark(this)">
             </td>
         </tr><tr class="date-header">
-            <td colspan="7">
+            <td colspan="6">
                 <span class="date-label">04/01/2026</span>
                 <span class="date-stats">1 debits &bull; <strong class="negative">($8,350.47)</strong></span>
             </td>
@@ -10114,14 +9827,6 @@
             <td class="amount negative">($8,350.47)</td>
             <td class="ach-col">94WX0 033114V01</td>
             <td class="desc-col">ADP 401k</td>
-            <td class="posted-col">
-                <select class="posted-select" data-row="out-67bd6260a2" onchange="updateStatus(this)">
-                    <option value="">--</option>
-                    <option value="yes">Yes</option>
-                    <option value="no">No</option>
-                    <option value="partial">Partial</option>
-                </select>
-            </td>
             <td class="remarks-col">
                 <input type="text" class="remarks-input" data-row="rmk-out-67bd6260a2" placeholder="Add remarks..." onchange="saveRemark(this)">
             </td>
@@ -10188,7 +9893,7 @@ function saveRemark(input) {
 }
 
 function updateProgress() {
-    const ppoTabs = ['tab-eft', 'tab-lockbox', 'tab-depchk', 'tab-bankdep', 'tab-carddeposits', 'tab-outgoing', 'tab-cashdep'];
+    const ppoTabs = ['tab-eft', 'tab-lockbox', 'tab-depchk', 'tab-cashdep'];
     const medTabs = ['tab-eftmed'];
 
     function countProgress(tabIds) {
