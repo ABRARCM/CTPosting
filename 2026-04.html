@@ -9892,23 +9892,36 @@ function saveRemark(input) {
     }
 }
 
+function getRowAmount(select) {
+    const row = select.closest('tr');
+    if (!row) return 0;
+    const amtCell = row.querySelector('.amount');
+    if (!amtCell) return 0;
+    const txt = amtCell.textContent.replace(/[$,()]/g, '').trim();
+    const val = parseFloat(txt);
+    return isNaN(val) ? 0 : val;
+}
+
 function updateProgress() {
     const ppoTabs = ['tab-eft', 'tab-lockbox', 'tab-depchk', 'tab-cashdep'];
     const medTabs = ['tab-eftmed'];
 
+    // Dollar-based progress: yes = 100%, partial = 50%
     function countProgress(tabIds) {
-        let total = 0, done = 0;
+        let totalAmt = 0, postedAmt = 0;
         tabIds.forEach(id => {
             const tab = document.getElementById(id);
             if (tab) {
                 const selects = tab.querySelectorAll('.posted-select:not(.eob-select)');
                 selects.forEach(s => {
-                    total++;
-                    if (s.value === 'yes') done++;
+                    const amt = getRowAmount(s);
+                    totalAmt += amt;
+                    if (s.value === 'yes') postedAmt += amt;
+                    else if (s.value === 'partial') postedAmt += amt * 0.5;
                 });
             }
         });
-        return total > 0 ? Math.round((done / total) * 100) : 0;
+        return totalAmt > 0 ? Math.round((postedAmt / totalAmt) * 100) : 0;
     }
 
     const ppoPct = countProgress(ppoTabs);
@@ -9919,6 +9932,7 @@ function updateProgress() {
     document.getElementById('progressFillMed').style.width = medPct + '%';
     document.getElementById('progressTextMed').textContent = medPct + '%';
 
+    // Per-tab posted totals
     const tabsWithPosted = ['tab-eft', 'tab-eftmed', 'tab-lockbox', 'tab-depchk', 'tab-cashdep'];
     tabsWithPosted.forEach(tabId => {
         const tab = document.getElementById(tabId);
@@ -9928,15 +9942,9 @@ function updateProgress() {
         const selects = tab.querySelectorAll('.posted-select:not(.eob-select)');
         selects.forEach(s => {
             if (s.value === 'yes') {
-                const row = s.closest('tr');
-                if (row) {
-                    const amtCell = row.querySelector('.amount');
-                    if (amtCell) {
-                        const txt = amtCell.textContent.replace(/[$,()]/g, '').trim();
-                        const val = parseFloat(txt);
-                        if (!isNaN(val)) postedAmt += val;
-                    }
-                }
+                postedAmt += getRowAmount(s);
+            } else if (s.value === 'partial') {
+                postedAmt += getRowAmount(s) * 0.5;
             }
         });
         el.textContent = 'Posted: $' + postedAmt.toLocaleString('en-US', {minimumFractionDigits: 2, maximumFractionDigits: 2});
