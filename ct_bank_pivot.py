@@ -415,7 +415,7 @@ ONEDRIVE_LOCKBOX = f"{ONEDRIVE_BASE}/LockBox"
 
 lb_frames = []
 for lb_path in [ONEDRIVE_LOCKBOX]:
-    lb_files = sorted(glob.glob(f"{lb_path}/*.csv"))
+    lb_files = sorted(glob.glob(f"{lb_path}/**/*.csv", recursive=True) + glob.glob(f"{lb_path}/*.csv"))
     for lf in lb_files:
         print(f"Reading Lockbox: {os.path.basename(lf)}")
         tmp = pd.read_csv(lf)
